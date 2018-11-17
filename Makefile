@@ -6,7 +6,7 @@
 #    By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/06/26 01:24:46 by qcharpen     #+#   ##    ##    #+#        #
-#    Updated: 2018/10/29 10:07:35 by qcharpen    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/11/17 16:14:33 by gmadec      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -66,24 +66,26 @@ OBJ = $(LIBFT:.c=.o) $(LISTS:.c=.o) $(PARSE:.c=.o) $(HANDLERS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 
 $(LIBFT_PATH)%.o: $(LIBFT)%.c
-	gcc -c $(FLAGS) $(LIBFT)
+	@gcc -c $(FLAGS) $(LIBFT)
 
 $(LISTS_PATH)%.o: $(LISTS)%.c
-	gcc -c $(FLAGS) $(LISTS)
+	@gcc -c $(FLAGS) $(LISTS)
 
 $(PARSE_PATH)%.o: $(PARSE)%.c
-	gcc -c $(FLAGS) $(PARSE)
+	@gcc -c $(FLAGS) $(PARSE)
 
 $(HANDLERS_PATH)%.o: $(HANDLERS)%.c
-	gcc - c $(FLAGS) $(HANDLERS)
+	@gcc - c $(FLAGS) $(HANDLERS)
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@echo "[SUPPRESSION DE LA LIBFT_PRINTF]"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "[SUPPRESSION DES SRCs_PRINTF]"
 
 re: fclean all
