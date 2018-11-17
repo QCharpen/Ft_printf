@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 16:56:49 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/09/29 21:15:22 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 18:35:29 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,13 +17,13 @@ void	ft_lstaddend(t_list **alst, t_list *nxt)
 {
 	t_list	*curr;
 
-	if (!(*alst))
+	if (!*alst)
 		*alst = nxt;
 	else
 	{
 		curr = *alst;
-		while ((curr)->next)
-			(curr) = (curr)->next;
-		(curr)->next = nxt;
+		while (curr->next)
+			curr = curr->next;
+		curr->next = nxt;
 	}
 }

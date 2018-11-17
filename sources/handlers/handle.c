@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/15 06:53:41 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/29 07:24:36 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 18:37:49 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,20 +17,26 @@ t_list				*handle(char **str, va_list args, int a)
 {
 	t_flags		*spec;
 	int			i;
+	t_list		*curr_list;
 
-	*str = &((*str)[a]);
-	i = 0;
+	i = a;
 	while ((*str)[i] && is_valid((*str)[i]) && !is_conv((*str)[i]))
 		i++;
 	if (!(*str)[i] || !is_conv((*str)[i]))
 	{
-		*str = &((*str)[i]);
+		*str = &(*str)[i];
 		return (ft_lstnew(NULL, -1));
 	}
-	i++;
-	spec = parse(*str);
-	*str = &((*str)[i]);
-	return (select_conv(spec, args));
+	spec = parse(&(*str)[a]);
+	curr_list = select_conv(spec, args);
+	if (a > 1)
+	{
+		curr_list->str = ft_strnjoin(ft_strcut(*str, a - 1), curr_list->str,
+				curr_list->size);
+		curr_list->size += a - 1;
+	}
+	*str = &(*str)[i + 1];
+	return (curr_list);
 }
 
 static t_handlers	tabinit(char conv, t_list *(*fct)(t_flags*, va_list))

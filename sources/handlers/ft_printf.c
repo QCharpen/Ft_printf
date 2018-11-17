@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/05/26 16:09:48 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/29 07:19:28 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 18:20:35 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -32,15 +32,13 @@ int	ft_inner_printf(va_list args, const char *format)
 	int			i;
 	t_list		*list;
 
-	str = ft_strdup(format);
+	str = (char*)format;
 	i = 0;
 	list = NULL;
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
-			if (i > 0)
-				ft_lstaddend(&list, ft_lstnew(ft_strcut(str, i), i));
 			ft_lstaddend(&list, handle(&str, args, i + 1));
 			i = -1;
 		}

@@ -101,17 +101,20 @@ int		main(int ac, char **av)
 	int		len1;
 	int		len2;
 
-	char	*str = av[1];
-	int		arg;
+	char	*str = "ca%---4c, %1c, %10c, %-cdd";
+	char	a = '\0';
+	char	b = '\n';
+	char	c = (char)564;
+	char	d = 0;
 
 //	setlocale(LC_ALL, "");
 
 	ft_connect_stdout(pfd, &save);
-	len1 = ft_printf(str, arg);
+	len1 = ft_printf("hello ca%----4c %1c va %10c%-c ??", '\0', '\n', (char)564, 0);
 	test1 = ft_get_stdout(pfd, &save);
 
 	ft_connect_stdout(pfd, &save);
-	len2 = printf(str, arg);
+	len2 = printf("hello ca%----4c %1c va %10c%-c ??", '\0', '\n', (char)564, 0);
 	test2 = ft_get_stdout(pfd, &save);
 
 	printf("strlen1 %lu, strlen2 %lu\n", strlen(test1), strlen(test2));

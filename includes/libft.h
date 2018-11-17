@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/05 18:29:11 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/26 08:35:14 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 18:33:52 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,6 +24,7 @@ char			*ft_itoa(long long int n);
 char			*ft_itoa_base_unsigned(uintmax_t n, int base, int maj);
 int				ft_isdigit(int c);
 int				ft_isinstr(char *str, char c);
+char			*ft_strnjoin(char *s1, char *s2, int n);
 
 void			ft_bzero(void *s, size_t n);
 void			*ft_memalloc(size_t size);
