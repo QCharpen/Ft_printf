@@ -6,14 +6,14 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/08/17 03:14:19 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/24 09:12:56 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 21:54:23 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-t_list	*handle_percent(t_flags *spec, va_list args)
+t_list	*ftprintf_handle_percent(t_flags *spec, va_list args)
 {
 	char	*rst;
 	int		len;

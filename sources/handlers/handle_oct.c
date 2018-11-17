@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/08/22 08:26:31 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/17 18:25:52 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 21:54:59 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -79,7 +79,7 @@ static intmax_t		get_arg(t_flags *spec, va_list args)
 	return (arg);
 }
 
-t_list				*handle_oct(t_flags *spec, va_list args)
+t_list				*ftprintf_handle_oct(t_flags *spec, va_list args)
 {
 	char		*rst;
 	char		*tmp;

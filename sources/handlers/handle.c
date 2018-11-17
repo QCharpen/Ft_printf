@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/15 06:53:41 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/17 18:37:49 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 21:58:51 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -53,19 +53,19 @@ t_list				*select_conv(t_flags *spec, va_list args)
 	t_handlers	tab_handlers[14];
 	int			i;
 
-	tab_handlers[0] = tabinit('%', &handle_percent);
-	tab_handlers[1] = tabinit('c', &handle_char);
-	tab_handlers[2] = tabinit('s', &handle_str);
-	tab_handlers[3] = tabinit('d', &handle_signed_int);
-	tab_handlers[4] = tabinit('D', &handle_signed_int);
-	tab_handlers[5] = tabinit('i', &handle_signed_int);
-	tab_handlers[6] = tabinit('u', &handle_unsigned_int);
-	tab_handlers[7] = tabinit('U', &handle_unsigned_int);
-	tab_handlers[8] = tabinit('o', &handle_oct);
-	tab_handlers[9] = tabinit('O', &handle_oct);
-	tab_handlers[10] = tabinit('x', &handle_hex);
-	tab_handlers[11] = tabinit('X', &handle_hex);
-	tab_handlers[12] = tabinit('p', &handle_p);
+	tab_handlers[0] = tabinit('%', &ftprintf_handle_percent);
+	tab_handlers[1] = tabinit('c', &ftprintf_handle_char);
+	tab_handlers[2] = tabinit('s', &ftprintf_handle_str);
+	tab_handlers[3] = tabinit('d', &ftprintf_handle_signed_int);
+	tab_handlers[4] = tabinit('D', &ftprintf_handle_signed_int);
+	tab_handlers[5] = tabinit('i', &ftprintf_handle_signed_int);
+	tab_handlers[6] = tabinit('u', &ftprintf_handle_unsigned_int);
+	tab_handlers[7] = tabinit('U', &ftprintf_handle_unsigned_int);
+	tab_handlers[8] = tabinit('o', &ftprintf_handle_oct);
+	tab_handlers[9] = tabinit('O', &ftprintf_handle_oct);
+	tab_handlers[10] = tabinit('x', &ftprintf_handle_hex);
+	tab_handlers[11] = tabinit('X', &ftprintf_handle_hex);
+	tab_handlers[12] = tabinit('p', &ftprintf_handle_p);
 	i = -1;
 	while (++i < 13)
 	{

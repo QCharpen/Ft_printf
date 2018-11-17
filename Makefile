@@ -6,7 +6,7 @@
 #    By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/06/26 01:24:46 by qcharpen     #+#   ##    ##    #+#        #
-#    Updated: 2018/11/17 18:42:31 by qcharpen    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/11/17 22:07:01 by gmadec      ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -78,6 +78,11 @@ $(PARSE_PATH)%.o: $(PARSE)%.c
 
 $(HANDLERS_PATH)%.o: $(HANDLERS)%.c
 	@gcc - c $(FLAGS) $(HANDLERS)
+
+valgrind:
+	@gcc -ggdb3 ./sources/*/*.c test.c -I includes
+	@valgrind --leak-check=full --track-origins=yes ./a.out
+	@@rm -f $(OBJ) test.o a.out
 
 clean:
 	@rm -f $(OBJ)

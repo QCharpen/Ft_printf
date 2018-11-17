@@ -6,14 +6,14 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/08/16 22:02:16 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/14 19:53:30 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 21:56:00 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-t_list	*handle_char(t_flags *spec, va_list args)
+t_list	*ftprintf_handle_char(t_flags *spec, va_list args)
 {
 	char	arg;
 	char	*str;

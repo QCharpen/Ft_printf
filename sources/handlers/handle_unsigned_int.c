@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/08/22 08:26:31 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/14 19:48:35 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 21:53:38 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -94,7 +94,7 @@ static uintmax_t	get_arg(t_flags *spec, va_list args)
 	return (arg);
 }
 
-t_list				*handle_unsigned_int(t_flags *spec, va_list args)
+t_list				*ftprintf_handle_unsigned_int(t_flags *spec, va_list args)
 {
 	char		*rst;
 	char		*tmp;

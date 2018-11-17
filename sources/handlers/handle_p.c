@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/09/25 06:55:25 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/01 13:39:19 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 21:54:46 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -37,7 +37,7 @@ t_list	*arg_zero(t_flags *spec)
 	return (ft_lstnew(rst, ft_strlen(rst)));
 }
 
-t_list	*handle_p(t_flags *spec, va_list args)
+t_list	*ftprintf_handle_p(t_flags *spec, va_list args)
 {
 	char	*rst;
 	char	*tmp;

@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/17 04:06:07 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/17 14:28:09 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 21:53:56 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,7 +23,7 @@ static int	mallsize(t_flags *spec, char *arg)
 	return (MAX(tmp, spec->width));
 }
 
-t_list		*handle_str(t_flags *spec, va_list args)
+t_list		*ftprintf_handle_str(t_flags *spec, va_list args)
 {
 	char	*arg;
 	char	*rst;
