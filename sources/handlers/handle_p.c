@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/09/25 06:55:25 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/17 22:43:52 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/18 00:23:22 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -62,7 +62,7 @@ t_list	*ftprintf_handle_p(t_flags *spec, va_list args)
 	rst[i++] = 'x';
 	while (tmp[i2])
 		rst[i++] = tmp[i2++];
-	while (i + ft_strlen(tmp) < spec->width)
+	while (i < spec->width)
 		rst[i++] = ' ';
 	rst[i] = '\0';
 	free(tmp);
