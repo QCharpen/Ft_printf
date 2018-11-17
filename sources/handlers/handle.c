@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/15 06:53:41 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/17 21:58:51 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 22:25:41 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,6 +29,7 @@ t_list				*handle(char **str, va_list args, int a)
 	}
 	spec = parse(&(*str)[a]);
 	curr_list = select_conv(spec, args);
+	free(spec);
 	if (a > 1)
 	{
 		curr_list->str = ft_strnjoin(ft_strcut(*str, a - 1), curr_list->str,

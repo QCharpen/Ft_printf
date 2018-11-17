@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/08/22 08:26:31 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/17 21:53:38 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 22:36:19 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -119,5 +119,6 @@ t_list				*ftprintf_handle_unsigned_int(t_flags *spec, va_list args)
 	while (i[0] < len && spec->flags[minus])
 		rst[i[0]++] = ' ';
 	rst[i[0]] = '\0';
+	free(tmp);
 	return (ft_lstnew(rst, len));
 }

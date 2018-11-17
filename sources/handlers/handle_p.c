@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/09/25 06:55:25 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/17 21:54:46 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/17 22:43:52 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -43,8 +43,10 @@ t_list	*ftprintf_handle_p(t_flags *spec, va_list args)
 	char	*tmp;
 	void	*arg;
 	int		i;
+	int		i2;
 	int		len;
 
+	i2 = 0;
 	arg = va_arg(args, void*);
 	if (arg == 0)
 		return (arg_zero(spec));
@@ -58,10 +60,11 @@ t_list	*ftprintf_handle_p(t_flags *spec, va_list args)
 		rst[i++] = ' ';
 	rst[i++] = '0';
 	rst[i++] = 'x';
-	while (*tmp)
-		rst[i++] = *tmp++;
+	while (tmp[i2])
+		rst[i++] = tmp[i2++];
 	while (i + ft_strlen(tmp) < spec->width)
 		rst[i++] = ' ';
 	rst[i] = '\0';
+	free(tmp);
 	return (ft_lstnew(rst, ft_strlen(rst)));
 }

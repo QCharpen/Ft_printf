@@ -2,5 +2,7 @@
 
 int		main()
 {
-	ft_printf("|aa %c, bb %c, cc %c, dd %c|", '\0', '\n', (char)564, 0);
+	int		i;
+
+	ft_printf("%d, %i, %s, %x, %d, %o, %p, %d, %i, %s, %x, %d, %o, %p", 15, 20, "adf", 12, 54, 125, &i, 15, 20, "adf", 12, 54, 125, &i);
 }
