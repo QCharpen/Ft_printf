@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/27 13:02:54 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/22 07:56:02 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/22 10:25:27 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,6 +23,9 @@
 # include "libft.h"
 # include "lists.h"
 # include "handlers.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 # define MAX(a, b) ((a > b) ? a : b)
 # define MIN(a, b) ((a > b) ? b : a)
