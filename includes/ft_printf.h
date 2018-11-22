@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/27 13:02:54 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/25 22:54:52 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/22 07:56:02 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,6 +29,11 @@
 # define ABS(a) (a > 0 ? a : -a)
 
 int				ft_printf(const char *format, ...);
-int				ft_inner_printf(va_list args, const char *format);
+int				ft_dprintf(int fd, const char *format, ...);
+int				ft_sprintf(char **str, const char *format, ...);
+int				ft_fprintf(char *str, const char *format, ...);
+int				ft_inner_printf(int fd, va_list args, const char *format);
+int				ft_inner_sprintf(void **fd, va_list args, const char *format);
+int				ft_inner_fprintf(void **fd, va_list args, const char *format);
 
 #endif

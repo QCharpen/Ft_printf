@@ -3,6 +3,9 @@
 int		main()
 {
 	int		i;
+	char	*str;
 
-	ft_printf("%d, %i, %s, %x, %d, %o, %p, %d, %i, %s, %x, %d, %o, %p", 15, 20, "adf", 12, 54, 125, &i, 15, 20, "adf", 12, 54, 125, &i);
+	str = NULL;
+	ft_sprintf(&str, "Bonsoir %s", "LES AMIS");
+	ft_printf("%s du soir\n", str);
 }
