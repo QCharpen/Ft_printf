@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/09/29 21:35:10 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/23 01:31:50 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/23 01:45:40 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -56,7 +56,7 @@ void	ft_lstsprint(void **str, t_list *lst)
 	*str = ret;
 }
 
-void	ft_lstprint(int fd, t_list *lst)
+void	ft_lstprint(void **fd, t_list *lst)
 {
 	t_list		*tmp;
 	char		*print;
@@ -68,6 +68,6 @@ void	ft_lstprint(int fd, t_list *lst)
 		print = ft_strjoin_free(print, tmp->str);
 		tmp = tmp->next;
 	}
-	print ? write(fd, print, ft_strlen(print)) : 0;
+	print ? write(*((int*)fd[0]), print, ft_strlen(print)) : 0;
 	print ? free(print) : 0;
 }
