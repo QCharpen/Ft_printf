@@ -7,6 +7,7 @@ int		main()
 
 	str = NULL;
 	ft_sprintf(&str, "Bonsoir %s", "LES AMIS");
-	ft_printf("%s du soir\n", str);
+	ft_printf("%s du soir%s\n", str, "du soir");
 	ft_fprintf("lol", str);
+	free(str);
 }

@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/09/29 21:35:10 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/22 11:08:52 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/23 01:31:50 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,6 @@ void	ft_lstfprint(void **str, t_list *lst)
 	char		*ret;
 	int			fd;
 
-//	printf("PATH: [%s]\n", (char*)*str);
 	if (access((char*)*str, W_OK))
 	{
 		if ((fd = open((char*)*str,
@@ -32,8 +31,8 @@ void	ft_lstfprint(void **str, t_list *lst)
 				ret = ft_strjoin_free(ret, tmp->str);
 				tmp = tmp->next;
 			}
-			*str = ret;
 			write(fd, ret, ft_strlen(ret));
+			ret ? free(ret) : 0;
 		}
 		else
 			lst->size = 0;
@@ -70,4 +69,5 @@ void	ft_lstprint(int fd, t_list *lst)
 		tmp = tmp->next;
 	}
 	print ? write(fd, print, ft_strlen(print)) : 0;
+	print ? free(print) : 0;
 }
