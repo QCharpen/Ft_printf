@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/22 13:03:07 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/22 14:27:18 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/28 13:04:44 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -63,7 +63,7 @@ char	*ft_ftoa(long double n, int dec)
 		str[i++] = ABS((int)n) + '0';
 		n -= ((int)n);
 		dec--;
-		if (dec == 0 && ABS(n * 10) > 5 )
+		if (dec == 0 && ABS(n * 10) >= 5 )
 			str[i - 1]++;
 	}
 	str[i++] = '\0';

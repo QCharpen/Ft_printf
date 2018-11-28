@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/05 18:29:11 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/22 07:27:28 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/11/28 13:26:59 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -26,6 +26,7 @@ char			*ft_strjoin_free(char *s1, char *s2);
 char			*ft_strnew(size_t size);
 
 char			*ft_itoa(long long int n);
+char			*ft_ftoa(long double n, int dec);
 char			*ft_itoa_base_unsigned(uintmax_t n, int base, int maj);
 int				ft_isdigit(int c);
 int				ft_isinstr(char *str, char c);
