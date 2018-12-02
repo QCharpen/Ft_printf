@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/27 13:02:54 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/23 01:48:48 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/02 16:29:04 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,6 +35,6 @@ int				ft_printf(const char *format, ...);
 int				ft_dprintf(int fd, const char *format, ...);
 int				ft_sprintf(char **str, const char *format, ...);
 int				ft_fprintf(char *str, const char *format, ...);
-int				ft_inner_printf(void (*f)(void**, t_list*), void **fd, va_list args, const char *format);
+int				ft_inner_printf(int (*f)(void**, t_list*), void **fd, va_list args, const char *format);
 
 #endif

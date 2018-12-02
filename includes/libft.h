@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/05 18:29:11 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/28 13:26:59 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/02 15:14:16 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,8 +21,8 @@ char			*ft_strcut(const char *s, size_t i);
 size_t			ft_strlen(const char *s);
 int				ft_strisdigit(char *str);
 char			*ft_strsub(const char *s, unsigned int start, size_t len);
-char			*ft_strjoin(const char *s1, const char *s2);
-char			*ft_strjoin_free(char *s1, char *s2);
+char			*ft_strjoin_len(const char *s1, const char *s2, int len);
+char			*ft_strjoin_free_len(char *s1, char *s2, int len);
 char			*ft_strnew(size_t size);
 
 char			*ft_itoa(long long int n);

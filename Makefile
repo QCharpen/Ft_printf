@@ -6,7 +6,7 @@
 #    By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/06/26 01:24:46 by qcharpen     #+#   ##    ##    #+#        #
-#    Updated: 2018/11/28 13:25:12 by qcharpen    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/12/02 16:03:36 by qcharpen    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -33,8 +33,6 @@ LIBFT = sources/libft/ft_bzero.c \
 		sources/libft/ft_itoa_base.c \
 		sources/libft/ft_strisdigit.c \
 		sources/libft/ft_strsub.c \
-		sources/libft/ft_strjoin.c \
-		sources/libft/ft_strjoin_free.c \
 		sources/libft/ft_strnew.c \
 
 LISTS_PATH = ./sources/lists
