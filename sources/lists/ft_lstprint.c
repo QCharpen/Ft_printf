@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/09/29 21:35:10 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/02 16:40:58 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/12 06:15:50 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -50,6 +50,7 @@ static t_list	*lstjoin_free(t_list *lst)
 	{
 		tmp = lst;
 		lst = lst->next;
+		free(tmp->str);
 		free(tmp);
 		rst = lstjoin(rst, lst);
 	}

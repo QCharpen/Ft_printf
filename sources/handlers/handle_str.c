@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/17 04:06:07 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/17 21:53:56 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/12 06:13:13 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,6 +29,7 @@ t_list		*ftprintf_handle_str(t_flags *spec, va_list args)
 	char	*rst;
 	int		i[2];
 	int		len;
+	t_list	*ret;
 
 	if ((arg = va_arg(args, char*)) == NULL)
 		arg = "(null)";
