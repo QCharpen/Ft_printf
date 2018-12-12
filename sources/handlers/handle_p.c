@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/09/25 06:55:25 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/18 00:23:22 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/12 07:31:31 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,11 +42,9 @@ t_list	*ftprintf_handle_p(t_flags *spec, va_list args)
 	char	*rst;
 	char	*tmp;
 	void	*arg;
-	int		i;
-	int		i2;
+	int		*i;
 	int		len;
 
-	i2 = 0;
 	arg = va_arg(args, void*);
 	if (arg == 0)
 		return (arg_zero(spec));
@@ -55,16 +53,15 @@ t_list	*ftprintf_handle_p(t_flags *spec, va_list args)
 		spec->width = 0;
 	len = MAX(spec->prec + 3, MAX(ft_strlen(tmp) + 3, spec->width + 1));
 	rst = ft_memalloc(sizeof(*tmp) * len);
-	i = 0;
-	while (!spec->flags[minus] && spec->width > (i + ft_strlen(tmp) + 2))
-		rst[i++] = ' ';
-	rst[i++] = '0';
-	rst[i++] = 'x';
-	while (tmp[i2])
-		rst[i++] = tmp[i2++];
-	while (i < spec->width)
-		rst[i++] = ' ';
-	rst[i] = '\0';
-	free(tmp);
+	i = ft_tabset(2);
+	while (!spec->flags[minus] && spec->width > (i[0] + ft_strlen(tmp) + 2))
+		rst[(i[0])++] = ' ';
+	rst[(i[0])++] = '0';
+	rst[(i[0])++] = 'x';
+	while (tmp[i[1]])
+		rst[(i[0])++] = tmp[i[1]++];
+	while (i[0] < spec->width)
+		rst[(i[0])++] = ' ';
+	ft_printf_utils_norme(&rst, i, tmp);
 	return (ft_lstnew(rst, ft_strlen(rst)));
 }

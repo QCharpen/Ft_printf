@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/22 13:03:07 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/28 13:04:44 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/12 07:11:15 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,9 +25,10 @@ static long long int	ft_pow(long long int nb, int pow)
 		return (1 / ft_pow(nb, -pow));
 }
 
-double	next_n(double n, int ent)
+double					next_n(double n, int ent)
 {
 	int		i;
+
 	i = ABS(n / ft_pow(10, ent - 1));
 	if (n > 0)
 		n -= i * (ft_pow(10, ent - 1));
@@ -36,7 +37,21 @@ double	next_n(double n, int ent)
 	return (n);
 }
 
-char	*ft_ftoa(long double n, int dec)
+void					end_of_ftoa(int dec, long double n, int i, char **str)
+{
+	while (dec > 0)
+	{
+		n *= 10;
+		(*str)[i++] = ABS((int)n) + '0';
+		n -= ((int)n);
+		dec--;
+		if (dec == 0 && ABS(n * 10) >= 5)
+			str[i - 1]++;
+	}
+	(*str)[i++] = '\0';
+}
+
+char					*ft_ftoa(long double n, int dec)
 {
 	int		ent;
 	char	*str;
@@ -57,15 +72,6 @@ char	*ft_ftoa(long double n, int dec)
 	}
 	if (dec > 0)
 		str[i++] = '.';
-	while (dec > 0)
-	{
-		n *= 10;
-		str[i++] = ABS((int)n) + '0';
-		n -= ((int)n);
-		dec--;
-		if (dec == 0 && ABS(n * 10) >= 5 )
-			str[i - 1]++;
-	}
-	str[i++] = '\0';
+	end_of_ftoa(dec, n, i, &str);
 	return (str);
 }

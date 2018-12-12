@@ -6,14 +6,14 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/28 12:27:47 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/28 13:20:45 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/12 07:19:59 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static int			mallsize(t_flags *spec, long double i)
+static int				mallsize(t_flags *spec, long double i)
 {
 	int		rst;
 
@@ -31,14 +31,14 @@ static int			mallsize(t_flags *spec, long double i)
 	return (rst);
 }
 
-static int			is_space(t_flags *spec, char *tmp, intmax_t len, int i)
+static int				is_space(t_flags *spec, char *tmp, intmax_t len, int i)
 {
 	if (spec->flags[minus])
 		return (0);
 	return (!spec->flags[zero] && i < len - ft_strlen(tmp));
 }
 
-static int			is_zero(t_flags *spec, char *tmp, intmax_t len, int i)
+static int				is_zero(t_flags *spec, char *tmp, intmax_t len, int i)
 {
 	if (spec->flags[minus])
 		return (0);
@@ -58,7 +58,7 @@ static long double		get_arg(t_flags *spec, va_list args)
 	return (arg);
 }
 
-t_list				*ftprintf_handle_float(t_flags *spec, va_list args)
+t_list					*ftprintf_handle_float(t_flags *spec, va_list args)
 {
 	char		*rst;
 	char		*tmp;

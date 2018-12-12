@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/27 13:02:54 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/02 16:29:04 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/12 07:33:01 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,9 +23,9 @@
 # include "libft.h"
 # include "lists.h"
 # include "handlers.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 
 # define MAX(a, b) ((a > b) ? a : b)
 # define MIN(a, b) ((a > b) ? b : a)
@@ -35,6 +35,7 @@ int				ft_printf(const char *format, ...);
 int				ft_dprintf(int fd, const char *format, ...);
 int				ft_sprintf(char **str, const char *format, ...);
 int				ft_fprintf(char *str, const char *format, ...);
-int				ft_inner_printf(int (*f)(void**, t_list*), void **fd, va_list args, const char *format);
+int				ft_inner_printf(int (*f)(void**, t_list*), void **fd,
+		va_list args, const char *format);
 
 #endif

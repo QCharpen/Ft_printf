@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/15 06:53:41 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/17 22:25:41 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/12 07:14:52 by gmadec      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -47,6 +47,13 @@ static t_handlers	tabinit(char conv, t_list *(*fct)(t_flags*, va_list))
 	ptr.conv = conv;
 	ptr.fct_handle = fct;
 	return (ptr);
+}
+
+void				ft_printf_utils_norme(char **rst, int *i, char *tmp)
+{
+	(*rst)[i[0]] = '\0';
+	free(i);
+	free(tmp);
 }
 
 t_list				*select_conv(t_flags *spec, va_list args)
