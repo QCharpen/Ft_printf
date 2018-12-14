@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/22 13:03:07 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/12 07:11:15 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/14 23:24:41 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,9 +42,11 @@ void					end_of_ftoa(int dec, long double n, int i, char **str)
 	while (dec > 0)
 	{
 		n *= 10;
-		(*str)[i++] = ABS((int)n) + '0';
+		(*str)[i++] = ((int)n) + '0';
+		printf("n %Lf bf, int n (%d), ", n, ((int)n));
 		n -= ((int)n);
 		dec--;
+		printf("n %Lf af\n", n);
 		if (dec == 0 && ABS(n * 10) >= 5)
 			str[i - 1]++;
 	}
@@ -63,7 +65,10 @@ char					*ft_ftoa(long double n, int dec)
 		ent++;
 	str = ft_memalloc(sizeof(*str) * (dec + ent + 2 + (n < 0 ? 1 : 0)));
 	if (n < 0)
+	{
+		n *= -1;
 		str[i++] = '-';
+	}
 	while (ent > 0)
 	{
 		str[i++] = ABS(n / ft_pow(10, ent - 1)) + '0';

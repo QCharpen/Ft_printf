@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/15 06:53:41 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/12 07:14:52 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/14 07:43:11 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -58,7 +58,7 @@ void				ft_printf_utils_norme(char **rst, int *i, char *tmp)
 
 t_list				*select_conv(t_flags *spec, va_list args)
 {
-	t_handlers	tab_handlers[14];
+	t_handlers	tab_handlers[15];
 	int			i;
 
 	tab_handlers[0] = tabinit('%', &ftprintf_handle_percent);
@@ -74,8 +74,10 @@ t_list				*select_conv(t_flags *spec, va_list args)
 	tab_handlers[10] = tabinit('x', &ftprintf_handle_hex);
 	tab_handlers[11] = tabinit('X', &ftprintf_handle_hex);
 	tab_handlers[12] = tabinit('p', &ftprintf_handle_p);
+	tab_handlers[13] = tabinit('f', &ftprintf_handle_float);
+	tab_handlers[14] = tabinit('F', &ftprintf_handle_float);
 	i = -1;
-	while (++i < 13)
+	while (++i < 15)
 	{
 		if (tab_handlers[i].conv == spec->conv)
 			return (tab_handlers[i].fct_handle(spec, args));

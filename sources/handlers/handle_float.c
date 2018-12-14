@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/28 12:27:47 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/12 07:19:59 by gmadec      ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/14 23:07:09 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -66,8 +66,10 @@ t_list					*ftprintf_handle_float(t_flags *spec, va_list args)
 	int			len;
 	int			*i;
 
+	printf("conv %c\n", spec->conv);
 	arg = get_arg(spec, args);
 	tmp = ft_ftoa(arg, spec->prec);
+	printf("\n\narg |%Lf| |%LF|, tmp |%s|\n", arg, arg, tmp);
 	len = mallsize(spec, arg);
 	rst = ft_memalloc(sizeof(*rst) * (len + 1));
 	i = ft_tabset(2);

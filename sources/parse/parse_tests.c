@@ -6,7 +6,7 @@
 /*   By: qcharpen <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/03 17:49:47 by qcharpen     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/17 15:01:55 by qcharpen    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/14 22:56:08 by qcharpen    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,7 +15,7 @@
 
 int		is_conv(const char c)
 {
-	return (ft_strchr("%sdDioOuUxXcpf", c) != NULL);
+	return (ft_strchr("%sdDioOuUxXcpfF", c) != NULL);
 }
 
 int		is_size(const char c)
